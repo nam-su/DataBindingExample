@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- xml 코드 전체에 layout 태그-->
+<layout>
+
+    <!-- 레이아웃 파일에서 데이터를 다루기 위해 data,variable 태그 추가-->
+    <data>
+
+        <!-- variable 태그 내 type 속성으로 다른 클래스를 참조-->
+        <variable
+            name="student"
+            type="com.example.databinding_aac.Student" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".MainActivity">
+
+        <!-- textView의 text 속성에 바인딩 문법 사용-->
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{student.name}"
+            android:textSize="30sp"
+           />
+
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(student.age)}"
+            android:textSize="30sp"
+            />
+
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{student.hobby}"
+            android:textSize="30sp"/>
+
+    </LinearLayout>
+
+</layout>
